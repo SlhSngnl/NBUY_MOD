@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8"/>
+    <title></title>
+    <link href="~/Content/lib/bootstrapv4/css/bootstrap.min.css" rel="stylesheet" />
+    @RenderSection("head",false)
+    
+</head>
+<body class="container-fluid">
+@Html.Partial("navbar")
+<div >
+    @RenderBody()
+</div>
+@Html.Partial("footer")
+<script src="~/Content/lib/jquery/jquery3.4.1.min.js"></script>
+<script src="~/Content/lib/bootstrapv4/js/bootstrap.min.js"></script>
+@RenderSection("script",false)
+</body>
+</html>
