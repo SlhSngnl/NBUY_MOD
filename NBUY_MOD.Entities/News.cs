@@ -1,4 +1,6 @@
-﻿namespace NBUY_MOD.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace NBUY_MOD.Entities
 {
     public class News
     {
@@ -9,6 +11,7 @@
         public string NewsSubTitle { get; set; }
         public string NewsContent { get; set; }
         public string NewsImagePath { get; set; }
+        [ForeignKey("Category")]
         public int CategoryId { get; set; }
         public  Category Category { get; set; }
     }

@@ -5,6 +5,7 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NBUY_MOD.DAL.Mappings;
 using NBUY_MOD.Entities;
 
 namespace NBUY_MOD.DAL.Database
@@ -14,6 +15,7 @@ namespace NBUY_MOD.DAL.Database
         public ProjectContext()
         {
             
+           this.Database.Connection.ConnectionString= @"Server =.; Database = NBUYMODDB; Trusted_Connection = True"; 
         }
 
         public DbSet<News> News { get; set; }
@@ -22,6 +24,7 @@ namespace NBUY_MOD.DAL.Database
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Configurations.Add(new CategoryMappings());
         }
     }
 }
