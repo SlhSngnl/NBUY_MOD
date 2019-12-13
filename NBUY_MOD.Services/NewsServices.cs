@@ -12,6 +12,12 @@ namespace NBUY_MOD.Services
     public class NewsServices
     {
         private readonly NewsRepository _newsRepository;
+
+        public NewsServices()
+        {
+            _newsRepository=new NewsRepository();
+            
+        }
         public List<News> GetAll()
         {
             var newsList = _newsRepository.GetAll();

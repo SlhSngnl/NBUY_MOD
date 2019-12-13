@@ -15,7 +15,8 @@ namespace NBUY_MOD.DAL.Database
         public ProjectContext()
         {
             
-           this.Database.Connection.ConnectionString= @"Server =.; Database = NBUYMODDB; Trusted_Connection = True"; 
+           this.Database.Connection.ConnectionString= @"Server =.; Database = NBUYMODDB; Trusted_Connection = True";
+           var id = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
         public DbSet<News> News { get; set; }
